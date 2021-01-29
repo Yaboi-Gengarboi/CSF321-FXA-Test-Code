@@ -142,6 +142,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ByteBuffer.h" />
+    <ClInclude Include="Print.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ByteBuffer.cpp" />

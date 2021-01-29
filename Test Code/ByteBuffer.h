@@ -25,7 +25,7 @@ class ByteBuffer
 	ByteBuffer(const ByteBuffer& other) = default;
 
 	// Move constructor.
-	ByteBuffer(ByteBuffer&& other) = default;
+	ByteBuffer(ByteBuffer&& other) noexcept;
 
 	// Primary constructor.
 	ByteBuffer(std::byte* start, std::size_t length);
@@ -34,7 +34,7 @@ class ByteBuffer
 	ByteBuffer& operator = (const ByteBuffer& other) = default;
 
 	// Move assignment operator.
-	ByteBuffer& operator = (ByteBuffer&& other) = default;
+	ByteBuffer& operator = (ByteBuffer&& other) noexcept;
 
 	// Destructor.
 	~ByteBuffer() = default;
@@ -50,5 +50,7 @@ class ByteBuffer
 
 	const std::byte* end() const;
 };
+
+ByteBuffer ByteBufferSplit(ByteBuffer buffIn, std::size_t n);
 
 #endif // BYTEBUFFER_H_INCLUDED

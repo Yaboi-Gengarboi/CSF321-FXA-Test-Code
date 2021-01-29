@@ -11,10 +11,27 @@
 using std::byte;
 using std::size_t;
 
+ByteBuffer::ByteBuffer(ByteBuffer&& other) noexcept
+{
+	start_ = other.start_;
+	length_ = other.length_;
+
+	other.start_ = nullptr;
+}
+
 ByteBuffer::ByteBuffer(byte* start, size_t length)
 {
 	start_ = start;
 	length_ = length;
+}
+
+ByteBuffer& ByteBuffer::operator = (ByteBuffer&& other) noexcept
+{
+	start_ = other.start_;
+	length_ = other.length_;
+
+	other.start_ = nullptr;
+	return *this;
 }
 
 size_t ByteBuffer::length() const
