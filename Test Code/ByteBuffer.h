@@ -3,7 +3,7 @@
 // Justyn Durnford
 // Originally presented by Dr. Orion Lawlor on 2021-01-27
 // File created on 2021-01-27
-// Last updated on 2021-01-27
+// Last updated on 2021-01-31
 // Header file for the ByteBuffer class.
 
 #ifndef BYTEBUFFER_H_INCLUDED
@@ -49,8 +49,8 @@ class ByteBuffer
 	std::byte* end();
 
 	const std::byte* end() const;
-};
 
-ByteBuffer ByteBufferSplit(ByteBuffer buffIn, std::size_t n);
+	ByteBuffer split(std::size_t n);
+};
 
 #endif // BYTEBUFFER_H_INCLUDED
